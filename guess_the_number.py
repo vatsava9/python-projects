@@ -1,16 +1,24 @@
+# add limitations to human guess
+
 import random
 
 # human guess is where we guess the number that computer thinks
-def human_guess(x):
-    random_number = random.randint(1,x)
+def human_guess(high):
+    low = 1
+    random_number = random.randint(low,high)
     guess = 0
 
     while guess != random_number:
-        guess = int(input(f'Guess a random number between 1 and {x} : '))
-        if guess < random_number:
+        guess = int(input(f'Guess a random number between {low} and {high} : '))
+        if guess < random_number and low < guess:
             print('Sorry, too low, guess again')
-        elif guess > random_number:
+            low = guess
+        elif guess > random_number and high > guess:
             print("Sorry, guess againm Too high")
+            high = guess
+        else:
+            print(f'Select a number between {low} and {high}')
+
 
     print(f"You guessed correctly. The number is {random_number}")
 
