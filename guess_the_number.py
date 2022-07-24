@@ -14,11 +14,11 @@ def human_guess(high):
             print('Sorry, too low, guess again')
             low = guess
         elif guess > random_number and high > guess:
-            print("Sorry, guess againm Too high")
+            print("Sorry, guess again, too high")
             high = guess
         else:
-            print(f'Select a number between {low} and {high}')
-
+            #print(f'Select a number between {low} and {high}')
+            pass
 
     print(f"You guessed correctly. The number is {random_number}")
 
